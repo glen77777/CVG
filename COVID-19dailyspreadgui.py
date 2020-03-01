@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from tkinter import *
-import tkinter.messagebox as tm
 window = Tk()
 window.title('COVID-19 Spread')
 label = Label(window, text = 'Graphical representation of rate of spread by day')
