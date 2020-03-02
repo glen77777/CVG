@@ -359,7 +359,7 @@ var_6 = IntVar()
 var_7 = IntVar()
 line_1 = Checkbutton(frame, text = 'world',\
                      variable = var_1, onvalue = 1, offvalue = 0)
-line_2 = Checkbutton(frame, text = 'normailzed-world',\
+line_2 = Checkbutton(frame, text = 'normalized-world',\
                      variable = var_2, onvalue = 1, offvalue = 0)
 line_3 = Checkbutton(frame, text = 'extreme normalized-world',\
                      variable = var_3, onvalue = 1, offvalue = 0)
