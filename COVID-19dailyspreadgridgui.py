@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 from tkinter import *
 window = Tk()
 window.title('COVID-19 Spread')
-label = Label(window, text = 'Graphical representation of rate of spread by day')
-label.grid(row =1)
+window.resizable(0, 0)
+label = Label(window, text = 'Graphical representation of rate of spread by day', fg="White", font=("Helvetica", 18))
+label.grid(row =1, column = 2, columnspan = 9, rowspan = 3)
 day1 = jan21 = 329
 day2 = jan22 = 561
 day3 = jan23 = 672
@@ -323,32 +324,35 @@ x3 = [15,29,30,31,32,33,34,35,36,37,38]
 maxinc = max(y)
 mininc = min(y)
 p1=('World-Lowest delta for spread of infection:' , mininc)
-p2=('World-Average delta for spread of infection: ' , avinc)
+p2=('World-Average delta for spread of infection:' , avinc)
 p3=('World-Highest delta for spread of infection:', maxinc)
 p4=('Korea-Lowest delta for spread of infection:' , min(y4))
-p5=('Korea-Average delta for spread of infection: ' , kav)
+p5=('Korea-Average delta for spread of infection:' , kav)
 p6=('Korea-Highest delta for spread of infection:', max(y4))
 p7=('Italy-Lowest delta for spread of infection:' , min(y5))
-p8=('Italy-Average delta for spread of infection: ' , itav)
+p8=('Italy-Average delta for spread of infection:' , itav)
 p9=('Italy-Highest delta for spread of infection:', max(y5))
 people = 1
-day = 0
+r1day = 0
 while ( people < 7500000000):
-    day = day + 1
+    r1day = r1day + 1
     people = people * mininc
-print('at the minimum growth rate of' , mininc , 'we gotta bout' , day + 1 , 'days, or' , day / 365 , 'years')
+r1=('at' , 'the' , 'minimum' , 'growth' , 'rate' , 'of' , mininc)
+r2=('time' , 'elapsed' , 'to' , 'spread' , 'to' , '7.5' , 'billion' , 'is' , r1day + 1 , 'days' , '=' , r1day / 365 , 'years')
 people = 1
-day = 0
+r2day = 0
 while ( people < 7500000000):
-    day = day + 1
+    r2day = r2day + 1
     people = people * avinc
-print('at the average growth rate of' , avinc , 'we gotta bout' , day + 1 , 'days, or' , day / 30 , 'months')
+r3=('at' , 'the' , 'average' , 'growth' , 'rate' , 'of' , avinc)
+r4=('time' , 'elapsed' , 'to' , 'spread' , 'to' , '7.5' , 'billion' , 'is' , r2day + 1 , 'days' , '=' , r2day / 30 , 'months')
 people = 1
-day = 0
+r3day = 0
 while ( people < 7500000000):
-    day = day + 1
+    r3day = r3day + 1
     people = people * maxinc
-print('at the maximum growth rate of' , maxinc , 'we gotta bout' , day + 1 , 'days, or' , day / 30 , 'months')
+r5=('at' , 'the' , 'maximum' , 'growth' , 'rate' , 'of' , maxinc)
+r6=('time' , 'elapsed' , 'to' , 'spread' , 'to' , '7.5' , 'billion' , 'is' , r3day + 1 , 'days' , '=' , r3day / 30 , 'months')
 var_1 = IntVar()
 var_2 = IntVar()
 var_3 = IntVar()
@@ -356,20 +360,13 @@ var_4 = IntVar()
 var_5 = IntVar()
 var_6 = IntVar()
 var_7 = IntVar()
-line_1 = Checkbutton(window, text = 'world',\
-                     variable = var_1, onvalue = 1, offvalue = 0)
-line_2 = Checkbutton(window, text = 'normailzed-world',\
-                     variable = var_2, onvalue = 1, offvalue = 0)
-line_3 = Checkbutton(window, text = 'extreme normalized-world',\
-                     variable = var_3, onvalue = 1, offvalue = 0)
-line_4 = Checkbutton(window, text = 'korea',\
-                     variable = var_4, onvalue = 1, offvalue = 0)
-line_5 = Checkbutton(window, text = 'korea-normalized',\
-                     variable = var_5, onvalue = 1, offvalue = 0)
-line_6 = Checkbutton(window, text = 'italy',\
-                     variable = var_6, onvalue = 1, offvalue = 0)
-line_7 = Checkbutton(window, text = 'italy-normalized',\
-                     variable = var_7, onvalue = 1, offvalue = 0)
+line_1 = Checkbutton(window, text = 'world', fg="White", font=("Helvetica", 10), variable = var_1, onvalue = 1, offvalue = 0)
+line_2 = Checkbutton(window, text = 'normalized-world', fg="White", font=("Helvetica", 10), variable = var_2, onvalue = 1, offvalue = 0)
+line_3 = Checkbutton(window, text = 'extreme normalized-world', fg="White", font=("Helvetica", 10), variable = var_3, onvalue = 1, offvalue = 0)
+line_4 = Checkbutton(window, text = 'korea', fg="White", font=("Helvetica", 10), variable = var_4, onvalue = 1, offvalue = 0)
+line_5 = Checkbutton(window, text = 'korea-normalized', fg="White", font=("Helvetica", 10), variable = var_5, onvalue = 1, offvalue = 0)
+line_6 = Checkbutton(window, text = 'italy', fg="White", font=("Helvetica", 10), variable = var_6, onvalue = 1, offvalue = 0)
+line_7 = Checkbutton(window, text = 'italy-normalized', fg="White", font=("Helvetica", 10), variable = var_7, onvalue = 1, offvalue = 0)
 def dialog():
     if var_1.get()==1:plt.plot(x, y, label = "reported values - world (BNONEWS)")
     if var_2.get()==1:plt.plot(x, y2, label = "in respect to average change - world")
@@ -382,31 +379,67 @@ def dialog():
     plt.xlabel('days (Jan21-Feb29)')
     plt.title('Rate of COVID-19 spread')
     plt.show()
-btn = Button(window, text = 'graph selected lines' , command = dialog)
-btn.grid(row = 11)
-label2 = Label(window, text = p1)
-label2.grid(row = 13)
-label3 = Label(window, text = p2)
-label3.grid(row = 15)
-label4 = Label(window, text = p3)
-label4.grid(row = 17)
-label5 = Label(window, text = p4)
-label5.grid(row = 19)
-label6 = Label(window, text = p5)
-label6.grid(row = 21)
-label7 = Label(window, text = p6)
-label7.grid(row = 23)
-label8 = Label(window, text = p7)
-label8.grid(row = 25)
-label9 = Label(window, text = p8)
-label9.grid(row = 27)
-label10 = Label(window, text = p9)
-label10.grid(row = 29)
-line_1.grid(row = 4)
-line_2.grid(row = 5)
-line_3.grid(row = 6)
-line_4.grid(row = 7)
-line_5.grid(row = 8)
-line_6.grid(row = 9)
-line_7.grid(row = 10)
+btn = Button(window, text = 'graph selected lines', fg="White", font=("Helvetica", 12), command = dialog)
+rd=('WITH' , 'NO' , 'OTHER' , 'FACTORS' , 'CONSIDERED', '(just' , 'spread' , 'alone):')
+btn.grid(row = 8, column = 4, columnspan = 5)
+label2 = Label(window, text = p1, fg="White", font=("Helvetica", 10))
+label2.grid(row = 12, column = 1, columnspan = 5)
+label3 = Label(window, text = p2, fg="White", font=("Helvetica", 10))
+label3.grid(row = 13, column = 1, columnspan = 5)
+label4 = Label(window, text = p3, fg="White", font=("Helvetica", 10))
+label4.grid(row = 14, column = 1, columnspan = 5)
+label5 = Label(window, text = p4, fg="White", font=("Helvetica", 10))
+label5.grid(row = 15, column = 1, columnspan = 5)
+label6 = Label(window, text = p5, fg="White", font=("Helvetica", 10))
+label6.grid(row = 16, column = 1, columnspan = 5)
+label7 = Label(window, text = p6, fg="White", font=("Helvetica", 10))
+label7.grid(row = 17, column = 1, columnspan = 5)
+label8 = Label(window, text = p7, fg="White", font=("Helvetica", 10))
+label8.grid(row = 18, column = 1, columnspan = 5)
+label9 = Label(window, text = p8, fg="White", font=("Helvetica", 10))
+label9.grid(row = 19, column = 1, columnspan = 5)
+label10 = Label(window, text = p9, fg="White", font=("Helvetica", 10))
+label10.grid(row = 20, column = 1, columnspan = 5)
+label16 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label16.grid(row = 12, column = 6)
+label17 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label17.grid(row = 13, column = 6)
+label18 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label18.grid(row = 14, column = 6)
+label19 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label19.grid(row = 15, column = 6)
+label20 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label20.grid(row = 16, column = 6)
+label21 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label21.grid(row = 17, column = 6)
+label22 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label22.grid(row = 18, column = 6)
+label23 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label23.grid(row = 19, column = 6)
+label24 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label24.grid(row = 20, column = 6)
+label12 = Label(window, text = r1, fg="White", font=("Helvetica", 10))
+label12.grid(row = 13, column = 7, columnspan = 5)
+label13 = Label(window, text = r2, fg="White", font=("Helvetica", 10))
+label13.grid(row = 14, column = 7, columnspan = 5)
+label14 = Label(window, text = r3, fg="White", font=("Helvetica", 10))
+label14.grid(row = 16, column = 7, columnspan = 5)
+label12 = Label(window, text = r4, fg="White", font=("Helvetica", 10))
+label12.grid(row = 17, column = 7, columnspan = 5)
+label13 = Label(window, text = r5, fg="White", font=("Helvetica", 10))
+label13.grid(row = 19, column = 7, columnspan = 5)
+label14 = Label(window, text = r6, fg="White", font=("Helvetica", 10))
+label14.grid(row = 20, column = 7, columnspan = 5)
+label25 = Label(window, text = rd, fg="White", font=("Helvetica", 10))
+label25.grid(row = 12, column = 7, columnspan = 5)
+label26 = Label(window, text = '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', fg="White", font=("Helvetica", 10))
+label26.grid(row = 11, column = 1, columnspan = 11)
+
+line_1.grid(row = 4, column = 5)
+line_2.grid(row = 4, column = 7)
+line_3.grid(row = 5, column = 5, columnspan = 3)
+line_4.grid(row = 6, column = 5)
+line_5.grid(row = 6, column = 7)
+line_6.grid(row = 7, column = 5)
+line_7.grid(row = 7, column = 7)
 window.mainloop()
