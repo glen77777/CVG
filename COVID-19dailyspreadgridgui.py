@@ -408,6 +408,7 @@ def dialog():
     plt.ylabel('rate of increase in respect to previous day')
     plt.xlabel('days (Jan21-Mar3)')
     plt.title('Rate of COVID-19 spread')
+    plt.legend(loc="upper left")
     plt.show()
 btn = Button(window, text = 'graph selected lines', fg="Green", font=("Helvetica", 12), command = dialog)
 rd=('WITH' , 'NO' , 'OTHER' , 'FACTORS' , 'CONSIDERED', '(just' , 'spread' , 'alone):')
