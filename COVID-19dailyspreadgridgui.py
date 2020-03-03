@@ -3,7 +3,7 @@ from tkinter import *
 window = Tk()
 window.title('COVID-19 Spread')
 window.resizable(0, 0)
-label = Label(window, text = 'Graphical representation of rate of spread by day', fg="White", font=("Helvetica", 18))
+label = Label(window, text = 'Graphical representation of rate of spread by day', fg="Green", font=("Helvetica", 18))
 label.grid(row =1, column = 2, columnspan = 9, rowspan = 3)
 day1 = jan21 = 329
 day2 = jan22 = 561
@@ -44,6 +44,9 @@ day36 = feb26 = feb25 + 169 + 401 + 5 + 1 + 3 + 1 + 1 + 3 + 1 + 1 + 115 + 1 + 32
 day37 = feb27 = feb26 + 334 + 433 + 1 + 1 + 1 + 1 + 1 + 17 + 3 + 1 + 1 + 171 + 3 + 13 + 2 + 2 + 1 + 104 + 1 + 2 + 2 + 75 + 1 + 3 + 1 + 1 + 2 + 1 + 1 + 6 + 1 + 1 + 127 + 14 + 4 + 5 + 20 + 1 + 6 + 3 + 2 + 1 + 1 + 1 + 1 + 1 + 1 + 7 + 1 + 2
 day38 = feb28 = feb27 + 327 + 1 + 256 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 2 + 2 + 315 + 2 + 2 + 12 + 1 + 1 + 1 + 1 + 1 + 2 + 1 + 143 + 1 + 1 + 6 + 3 + 2 + 1 + 2 + 1 + 233 + 1 + 1 + 2 + 2 + 1 + 1 + 16 + 2 + 4 + 1 + 1 + 1 + 2 + 1 + 1 + 7 + 3 + 2 + 1 + 1 + 1 + 1 + 1 
 day39 = feb29 = feb28 + 1 + 423 + 4 + 594 + 1 + 1 + 1 + 1 + 1 + 1 + 5 + 1 + 219 + 8 + 4 + 205 + 1 + 3 + 3 + 1 + 1 + 1 + 1 + 1 + 2 + 4 + 16 + 3 + 2 + 1 + 3 + 1 + 2 + 5 + 8 + 10 + 239 + 3 + 1 + 2 + 27 + 1 + 3 + 1 + 3 + 1 + 1 + 1 + 570 + 3
+day40 = mar1 = feb29 + 1 + 376 + 1 + 4 + 1 + 210 + 2 + 1 + 1 + 5 + 1 + 385 + 1 + 38 + 12 + 4 + 1 + 3 + 3 + 5 + 3 + 1 + 1 + 18 + 2 + 6 + 6 + 1 + 6 + 4 + 566 + 1 + 2 + 30 + 1 + 1 + 1 + 15 + 8 + 3 + 12 + 1 + 1 + 5 + 2 + 1 + 1 + 4 + 2 + 7
+day41 = mar2 = mar1 + 2 + 3 + 196 + 6 + 1 + 4 + 476 + 1 + 1 + 2 + 1 + 2 + 1 + 1 + 123 + 10 + 1 + 2 + 1 + 20 + 2 + 2 + 2 + 523 + 6 + 1 + 1 + 18 + 8 + 2 + 36 + 1 + 4 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 5 + 4 + 340 + 2 + 6 + 2 + 2 + 6 + 2 + 1 + 1 + 1 + 1 + 1 + 3 + 61 + 3 + 2 + 4 + 1 + 7 + 2 + 6 + 3 + 1 + 1 + 2 + 1 + 3 + 1
+day42 = mar3 = mar2 + 114 + 11 + 477 + 1 + 1 + 1 + 1 + 2 + 374 + 1 + 1 + 835 + 6 + 2 + 31 + 10 + 6 + 7 + 466 + 1 + 21 + 5 + 1 + 19 + 31 + 7 + 1 + 1 + 1
 itday1 = ijan30 = 2
 itday2 = ifeb6 = itday1 + 1
 itday3 = ifeb20 = itday2 + 1
@@ -56,6 +59,9 @@ itday9 = ifeb26 = itday8 + 32 + 17 + 27 + 54
 itday10 = ifeb27 = itday9 + 75 + 127
 itday11 = ifeb28 = itday10 + 233 + 1
 itday12 = ifeb29 = itday11 + 239
+itday13 = imar1 = itday12 + 566
+itday14 = imar2 = itday13 + 2 + 340
+itday15 = imar3 = itday14 + 466
 it1i = itday2 / itday1
 it2i = itday3 / itday2
 it3i = itday4 / itday3
@@ -67,7 +73,10 @@ it8i = itday9 / itday8
 it9i = itday10 / itday9
 it10i = itday11 / itday10
 it11i = itday12 / itday11
-itav = (it1i + it2i + it3i + it4i + it5i + it6i + it7i + it8i + it9i + it10i + it11i)/11
+it12i = itday13 / itday12
+it13i = itday14 / itday13
+it14i = itday15 / itday14
+itav = (it1i + it2i + it3i + it4i + it5i + it6i + it7i + it8i + it9i + it10i + it11i + it12i + it13i + it14i)/14
 it1ia = (it1i + itav)/2
 it2ia = (it2i + itav)/2
 it3ia = (it3i + itav)/2
@@ -79,6 +88,9 @@ it8ia = (it8i + itav)/2
 it9ia = (it9i + itav)/2
 it10ia = (it10i + itav)/2
 it11ia = (it11i + itav)/2
+it12ia = (it12i + itav)/2
+it13ia = (it13i + itav)/2
+it14ia = (it14i + itav)/2
 korday1 = kjan24 = 1
 korday2 = kjan26 = korday1 + 1
 korday3 = kjan27 = korday2 + 1
@@ -105,6 +117,9 @@ korday23 = kfeb26 = korday22 + 169 + 115
 korday24 = kfeb27 = korday23 + 334 + 171
 korday25 = kfeb28 = korday24 + 256 + 315
 korday26 = kfeb29 = korday25 + 594 + 219
+korday27 = kmar1 = korday26 + 376 + 210
+korday28 = kmar2 = korday27 + 476 + 123
+korday29 = kmar3 = korday28 + 477 + 374
 k1i = korday2 / korday1
 k2i = korday3 / korday2
 k3i = korday4 / korday3
@@ -130,7 +145,10 @@ k22i = korday23 / korday22
 k23i = korday24 / korday23
 k24i = korday25 / korday24
 k25i = korday26 / korday25
-kav = (k1i + k2i + k3i + k4i + k5i + k6i + k7i + k8i + k9i + k10i + k11i + k12i + k13i + k14i + k15i + k16i + k17i + k18i + k19i + k20i + k21i + k22i + k23i + k24i + k25i)/25
+k26i = korday27 / korday26
+k27i = korday28 / korday27
+k28i = korday29 / korday28
+kav = (k1i + k2i + k3i + k4i + k5i + k6i + k7i + k8i + k9i + k10i + k11i + k12i + k13i + k14i + k15i + k16i + k17i + k18i + k19i + k20i + k21i + k22i + k23i + k24i + k25i + k26i + k27i + k28i)/28
 k1ia = (k1i + kav)/2
 k2ia = (k2i + kav)/2
 k3ia = (k3i + kav)/2
@@ -156,6 +174,9 @@ k22ia = (k22i + kav)/2
 k23ia = (k23i + kav)/2
 k24ia = (k24i + kav)/2
 k25ia = (k25i + kav)/2
+k26ia = (k26i + kav)/2
+k27ia = (k27i + kav)/2
+k28ia = (k28i + kav)/2
 day2inc = day2 / day1
 day3inc = day3 / day2
 day4inc = day4 / day3
@@ -194,8 +215,11 @@ day36inc = day36 / day35
 day37inc = day37 / day36
 day38inc = day38 / day37
 day39inc = day39 / day38
-addedinc = day2inc + day3inc + day4inc + day5inc + day6inc + day7inc + day8inc + day9inc + day10inc + day11inc + day12inc + day13inc + day14inc + day15inc + day16inc + day17inc + day18inc + day19inc + day20inc + day21inc + day22inc + day23inc + day24inc + day25inc + day26inc + day27inc + day28inc + day29inc + day30inc + day31inc + day32inc + day33inc + day34inc + day35inc + day36inc + day37inc + day38inc + day39inc
-avinc = addedinc / 38
+day40inc = day40 / day39
+day41inc = day41 / day40
+day42inc = day42 / day41
+addedinc = day2inc + day3inc + day4inc + day5inc + day6inc + day7inc + day8inc + day9inc + day10inc + day11inc + day12inc + day13inc + day14inc + day15inc + day16inc + day17inc + day18inc + day19inc + day20inc + day21inc + day22inc + day23inc + day24inc + day25inc + day26inc + day27inc + day28inc + day29inc + day30inc + day31inc + day32inc + day33inc + day34inc + day35inc + day36inc + day37inc + day38inc + day39inc + day40inc + day41inc + day42inc
+avinc = addedinc / 41
 adjinc2 = ((avinc+day2inc) / 2)
 adjinc3 = ((avinc+day3inc) / 2)
 adjinc4 = ((avinc+day4inc) / 2)
@@ -234,6 +258,9 @@ adjinc36 = ((avinc+day36inc) / 2)
 adjinc37 = ((avinc+day37inc) / 2)
 adjinc38 = ((avinc+day38inc) / 2)
 adjinc39 = ((avinc+day39inc) / 2)
+adjinc40 = ((avinc+day40inc) / 2)
+adjinc41 = ((avinc+day41inc) / 2)
+adjinc42 = ((avinc+day42inc) / 2)
 adj2inc2 = ((avinc+avinc+day2inc) / 3)
 adj2inc3 = ((avinc+avinc+day3inc) / 3)
 adj2inc4 = ((avinc+avinc+day4inc) / 3)
@@ -272,6 +299,9 @@ adj2inc36 = ((avinc+avinc+day36inc) / 3)
 adj2inc37 = ((avinc+avinc+day37inc) / 3)
 adj2inc38 = ((avinc+avinc+day38inc) / 3)
 adj2inc39 = ((avinc+avinc+day39inc) / 3)
+adj2inc40 = ((avinc+avinc+day40inc) / 3)
+adj2inc41 = ((avinc+avinc+day41inc) / 3)
+adj2inc42 = ((avinc+avinc+day42inc) / 3)
 print('Day 1 (Jan 21) reported infections:' , day1)
 print('Day 2 (Jan 22) increase' , day2inc)
 print('Day 3 (Jan 23) increase' , day3inc)
@@ -311,16 +341,16 @@ print('Day 36 (Feb 26) increase' , day36inc)
 print('Day 37 (Feb 27) increase' , day37inc)
 print('Day 38 (Feb 28) increase' , day38inc)
 print('Day 39 (Feb 29) increase' , day39inc)
-y = [day2inc,day3inc,day4inc,day5inc,day6inc,day7inc,day8inc,day9inc,day10inc,day11inc,day12inc,day13inc,day14inc,day15inc,day16inc,day17inc,day18inc,day19inc,day20inc,day21inc,day22inc,day23inc,day24inc,day25inc,day26inc,day27inc,day28inc,day29inc,day30inc,day31inc,day32inc,day33inc,day34inc,day35inc,day36inc,day37inc,day38inc,day39inc]
-y2 = [adjinc2,adjinc3,adjinc4,adjinc5,adjinc6,adjinc7,adjinc8,adjinc9,adjinc10,adjinc11,adjinc12,adjinc13,adjinc14,adjinc15,adjinc16,adjinc17,adjinc18,adjinc19,adjinc20,adjinc21,adjinc22,adjinc23,adjinc24,adjinc25,adjinc26,adjinc27,adjinc28,adjinc29,adjinc30,adjinc31,adjinc32,adjinc33,adjinc34,adjinc35,adjinc36,adjinc37,adjinc38,adjinc39]
-y3 = [adj2inc2,adj2inc3,adj2inc4,adj2inc5,adj2inc6,adj2inc7,adj2inc8,adj2inc9,adj2inc10,adj2inc11,adj2inc12,adj2inc13,adj2inc14,adj2inc15,adj2inc16,adj2inc17,adj2inc18,adj2inc19,adj2inc20,adj2inc21,adj2inc22,adj2inc23,adj2inc24,adj2inc25,adj2inc26,adj2inc27,adj2inc28,adj2inc29,adj2inc30,adj2inc31,adj2inc32,adj2inc33,adj2inc34,adj2inc35,adj2inc36,adj2inc37,adj2inc38,adj2inc39]
-y4 = [k1i,k2i,k3i,k4i,k5i,k6i,k7i,k8i,k9i,k10i,k11i,k12i,k13i,k14i,k15i,k16i,k17i,k18i,k19i,k20i,k21i,k22i,k23i,k24i,k25i]
-y7 = [k1ia,k2ia,k3ia,k4ia,k5ia,k6ia,k7ia,k8ia,k9ia,k10ia,k11ia,k12ia,k13ia,k14ia,k15ia,k16ia,k17ia,k18ia,k19ia,k20ia,k21ia,k22ia,k23ia,k24ia,k25ia]
-y5 = [it1i,it2i,it3i,it4i,it5i,it6i,it7i,it8i,it9i,it10i,it11i]
-y6 = [it1ia,it2ia,it3ia,it4ia,it5ia,it6ia,it7ia,it8ia,it9ia,it10ia,it11ia]
-x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38]
-x2 = [4,5,8,9,10,11,13,14,16,18,20,25,26,27,28,29,30,31,32,33,34,35,36,37,38]
-x3 = [15,29,30,31,32,33,34,35,36,37,38]
+y = [day2inc,day3inc,day4inc,day5inc,day6inc,day7inc,day8inc,day9inc,day10inc,day11inc,day12inc,day13inc,day14inc,day15inc,day16inc,day17inc,day18inc,day19inc,day20inc,day21inc,day22inc,day23inc,day24inc,day25inc,day26inc,day27inc,day28inc,day29inc,day30inc,day31inc,day32inc,day33inc,day34inc,day35inc,day36inc,day37inc,day38inc,day39inc,day40inc,day41inc,day42inc]
+y2 = [adjinc2,adjinc3,adjinc4,adjinc5,adjinc6,adjinc7,adjinc8,adjinc9,adjinc10,adjinc11,adjinc12,adjinc13,adjinc14,adjinc15,adjinc16,adjinc17,adjinc18,adjinc19,adjinc20,adjinc21,adjinc22,adjinc23,adjinc24,adjinc25,adjinc26,adjinc27,adjinc28,adjinc29,adjinc30,adjinc31,adjinc32,adjinc33,adjinc34,adjinc35,adjinc36,adjinc37,adjinc38,adjinc39,adjinc40,adjinc41,adjinc42]
+y3 = [adj2inc2,adj2inc3,adj2inc4,adj2inc5,adj2inc6,adj2inc7,adj2inc8,adj2inc9,adj2inc10,adj2inc11,adj2inc12,adj2inc13,adj2inc14,adj2inc15,adj2inc16,adj2inc17,adj2inc18,adj2inc19,adj2inc20,adj2inc21,adj2inc22,adj2inc23,adj2inc24,adj2inc25,adj2inc26,adj2inc27,adj2inc28,adj2inc29,adj2inc30,adj2inc31,adj2inc32,adj2inc33,adj2inc34,adj2inc35,adj2inc36,adj2inc37,adj2inc38,adj2inc39,adj2inc40,adj2inc41,adj2inc42]
+y4 = [k1i,k2i,k3i,k4i,k5i,k6i,k7i,k8i,k9i,k10i,k11i,k12i,k13i,k14i,k15i,k16i,k17i,k18i,k19i,k20i,k21i,k22i,k23i,k24i,k25i,k26i,k27i,k28i]
+y7 = [k1ia,k2ia,k3ia,k4ia,k5ia,k6ia,k7ia,k8ia,k9ia,k10ia,k11ia,k12ia,k13ia,k14ia,k15ia,k16ia,k17ia,k18ia,k19ia,k20ia,k21ia,k22ia,k23ia,k24ia,k25ia,k26ia,k27ia,k28ia]
+y5 = [it1i,it2i,it3i,it4i,it5i,it6i,it7i,it8i,it9i,it10i,it11i,it12i,it13i,it14i]
+y6 = [it1ia,it2ia,it3ia,it4ia,it5ia,it6ia,it7ia,it8ia,it9ia,it10ia,it11ia,it12ia,it13ia,it14ia]
+x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]
+x2 = [4,5,8,9,10,11,13,14,16,18,20,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]
+x3 = [15,29,30,31,32,33,34,35,36,37,38,39,40,41]
 maxinc = max(y)
 mininc = min(y)
 p1=('World-Lowest delta for spread of infection:' , mininc)
@@ -360,13 +390,13 @@ var_4 = IntVar()
 var_5 = IntVar()
 var_6 = IntVar()
 var_7 = IntVar()
-line_1 = Checkbutton(window, text = 'world', fg="White", font=("Helvetica", 10), variable = var_1, onvalue = 1, offvalue = 0)
-line_2 = Checkbutton(window, text = 'world-normalized', fg="White", font=("Helvetica", 10), variable = var_2, onvalue = 1, offvalue = 0)
-line_3 = Checkbutton(window, text = 'world-extreme normalization', fg="White", font=("Helvetica", 10), variable = var_3, onvalue = 1, offvalue = 0)
-line_4 = Checkbutton(window, text = 'korea', fg="White", font=("Helvetica", 10), variable = var_4, onvalue = 1, offvalue = 0)
-line_5 = Checkbutton(window, text = 'korea-normalized', fg="White", font=("Helvetica", 10), variable = var_5, onvalue = 1, offvalue = 0)
-line_6 = Checkbutton(window, text = 'italy', fg="White", font=("Helvetica", 10), variable = var_6, onvalue = 1, offvalue = 0)
-line_7 = Checkbutton(window, text = 'italy-normalized', fg="White", font=("Helvetica", 10), variable = var_7, onvalue = 1, offvalue = 0)
+line_1 = Checkbutton(window, text = 'world', fg="Green", font=("Helvetica", 10), variable = var_1, onvalue = 1, offvalue = 0)
+line_2 = Checkbutton(window, text = 'world-normalized', fg="Green", font=("Helvetica", 10), variable = var_2, onvalue = 1, offvalue = 0)
+line_3 = Checkbutton(window, text = 'world-extreme normalization', fg="Green", font=("Helvetica", 10), variable = var_3, onvalue = 1, offvalue = 0)
+line_4 = Checkbutton(window, text = 'korea', fg="Green", font=("Helvetica", 10), variable = var_4, onvalue = 1, offvalue = 0)
+line_5 = Checkbutton(window, text = 'korea-normalized', fg="Green", font=("Helvetica", 10), variable = var_5, onvalue = 1, offvalue = 0)
+line_6 = Checkbutton(window, text = 'italy', fg="Green", font=("Helvetica", 10), variable = var_6, onvalue = 1, offvalue = 0)
+line_7 = Checkbutton(window, text = 'italy-normalized', fg="Green", font=("Helvetica", 10), variable = var_7, onvalue = 1, offvalue = 0)
 def dialog():
     if var_1.get()==1:plt.plot(x, y, label = "reported values - world (BNONEWS)")
     if var_2.get()==1:plt.plot(x, y2, label = "normalized in respect to average change - world")
@@ -376,63 +406,63 @@ def dialog():
     if var_6.get()==1:plt.plot(x3, y5, label = "italy (BNONEWS)")
     if var_7.get()==1:plt.plot(x3, y6, label = "italy-normalized")
     plt.ylabel('rate of increase in respect to previous day')
-    plt.xlabel('days (Jan21-Feb29)')
+    plt.xlabel('days (Jan21-Mar3)')
     plt.title('Rate of COVID-19 spread')
     plt.show()
-btn = Button(window, text = 'graph selected lines', fg="White", font=("Helvetica", 12), command = dialog)
+btn = Button(window, text = 'graph selected lines', fg="Green", font=("Helvetica", 12), command = dialog)
 rd=('WITH' , 'NO' , 'OTHER' , 'FACTORS' , 'CONSIDERED', '(just' , 'spread' , 'alone):')
 btn.grid(row = 8, column = 4, columnspan = 5)
-label2 = Label(window, text = p1, fg="White", font=("Helvetica", 10))
+label2 = Label(window, text = p1, fg="Green", font=("Helvetica", 10))
 label2.grid(row = 12, column = 1, columnspan = 5)
-label3 = Label(window, text = p2, fg="White", font=("Helvetica", 10))
+label3 = Label(window, text = p2, fg="Green", font=("Helvetica", 10))
 label3.grid(row = 13, column = 1, columnspan = 5)
-label4 = Label(window, text = p3, fg="White", font=("Helvetica", 10))
+label4 = Label(window, text = p3, fg="Green", font=("Helvetica", 10))
 label4.grid(row = 14, column = 1, columnspan = 5)
-label5 = Label(window, text = p4, fg="White", font=("Helvetica", 10))
+label5 = Label(window, text = p4, fg="Green", font=("Helvetica", 10))
 label5.grid(row = 15, column = 1, columnspan = 5)
-label6 = Label(window, text = p5, fg="White", font=("Helvetica", 10))
+label6 = Label(window, text = p5, fg="Green", font=("Helvetica", 10))
 label6.grid(row = 16, column = 1, columnspan = 5)
-label7 = Label(window, text = p6, fg="White", font=("Helvetica", 10))
+label7 = Label(window, text = p6, fg="Green", font=("Helvetica", 10))
 label7.grid(row = 17, column = 1, columnspan = 5)
-label8 = Label(window, text = p7, fg="White", font=("Helvetica", 10))
+label8 = Label(window, text = p7, fg="Green", font=("Helvetica", 10))
 label8.grid(row = 18, column = 1, columnspan = 5)
-label9 = Label(window, text = p8, fg="White", font=("Helvetica", 10))
+label9 = Label(window, text = p8, fg="Green", font=("Helvetica", 10))
 label9.grid(row = 19, column = 1, columnspan = 5)
-label10 = Label(window, text = p9, fg="White", font=("Helvetica", 10))
+label10 = Label(window, text = p9, fg="Green", font=("Helvetica", 10))
 label10.grid(row = 20, column = 1, columnspan = 5)
-label16 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label16 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label16.grid(row = 12, column = 6)
-label17 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label17 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label17.grid(row = 13, column = 6)
-label18 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label18 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label18.grid(row = 14, column = 6)
-label19 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label19 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label19.grid(row = 15, column = 6)
-label20 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label20 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label20.grid(row = 16, column = 6)
-label21 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label21 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label21.grid(row = 17, column = 6)
-label22 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label22 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label22.grid(row = 18, column = 6)
-label23 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label23 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label23.grid(row = 19, column = 6)
-label24 = Label(window, text = '|', fg="White", font=("Helvetica", 10))
+label24 = Label(window, text = '|', fg="Green", font=("Helvetica", 10))
 label24.grid(row = 20, column = 6)
-label12 = Label(window, text = r1, fg="White", font=("Helvetica", 10))
+label12 = Label(window, text = r1, fg="Green", font=("Helvetica", 10))
 label12.grid(row = 13, column = 7, columnspan = 5)
-label13 = Label(window, text = r2, fg="White", font=("Helvetica", 10))
+label13 = Label(window, text = r2, fg="Green", font=("Helvetica", 10))
 label13.grid(row = 14, column = 7, columnspan = 5)
-label14 = Label(window, text = r3, fg="White", font=("Helvetica", 10))
+label14 = Label(window, text = r3, fg="Green", font=("Helvetica", 10))
 label14.grid(row = 16, column = 7, columnspan = 5)
-label12 = Label(window, text = r4, fg="White", font=("Helvetica", 10))
+label12 = Label(window, text = r4, fg="Green", font=("Helvetica", 10))
 label12.grid(row = 17, column = 7, columnspan = 5)
-label13 = Label(window, text = r5, fg="White", font=("Helvetica", 10))
+label13 = Label(window, text = r5, fg="Green", font=("Helvetica", 10))
 label13.grid(row = 19, column = 7, columnspan = 5)
-label14 = Label(window, text = r6, fg="White", font=("Helvetica", 10))
+label14 = Label(window, text = r6, fg="Green", font=("Helvetica", 10))
 label14.grid(row = 20, column = 7, columnspan = 5)
-label25 = Label(window, text = rd, fg="White", font=("Helvetica", 10))
+label25 = Label(window, text = rd, fg="Green", font=("Helvetica", 10))
 label25.grid(row = 12, column = 7, columnspan = 5)
-label26 = Label(window, text = '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', fg="White", font=("Helvetica", 10))
+label26 = Label(window, text = '-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------', fg="Green", font=("Helvetica", 10))
 label26.grid(row = 11, column = 1, columnspan = 11)
 
 line_1.grid(row = 5, column = 5)
